@@ -5,23 +5,37 @@ object ScalaLazyEvaluationObj{
         println(n);
     }
 
-    def method2(n: => Int) {
+    def method2(n: => Int) {/*basically until the 'n' value has been evaluated
+        // we dont get to see the 'println(n)' executed
+        //basically Lazy Evaluation in Scala this way
+        //affords us the ability to check the output type or check inputs before
+        //proceeding to evaluate them. We might be able to use this for some
+        //async processes in scala based on execution of code on confirmation of
+        //output type or output outcome.
+        */
         println("Method 2");
         println(n);
     }
 
-    //var addCounter = 0;//4. now moved outside of the method
-    //var addCounter: Int = 0;
     def main(args: Array[String]){
-        //var addCounter = 0; //3. we then comment this one out and instantiate
-        //it outside of the function or method
         val add = (a: Int, b: Int) => {
             println("add");// about to be called ... "+addCounter);
             a + b
         }
-        method1(add(2, 8));
+        var n: Int = add(2, 8);
+
+        method1(n);
+        //method1(add(2, 8));
+
+        //var n2: Int = add(7, 2);
+        //method2(n2);
 
         method2(add(7, 2))
+
+        //var n3: Int = add(8, 20);
+        //method2(n3);
+
+        method2(add(8, 20));
     }
 
 }

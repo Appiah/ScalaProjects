@@ -2,6 +2,17 @@
 
 class User(var name : String, var age : Int){
     def printName{println(name)}
+
+    def printAge{println(age)}
+
+    //Auxillary Constructors
+    def this(){
+        this("Tim", 32);
+    }
+
+    def this(name: String){
+        this(name, 33);
+    }
 }
 
 //val : should be considered as a constant and cannot be changed
@@ -19,5 +30,11 @@ object Demo{
         var user = new User("Manuel", 28);
         println("Name : "+user.name);
         println("Age : "+user.age);
+
+
+        var user1 = new User("Magnus", 29);
+        var user2 = new User();
+        var user3 = new User("Dondi");
+
     }
 }

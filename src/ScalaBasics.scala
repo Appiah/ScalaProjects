@@ -36,6 +36,30 @@ object ScalaBasics{
     //how to handle a not present key
     println(map.get(5).getOrElse("No such key exist"))
 
+    //Map and filter
+    val ulst = List (1,2,3,5,7,11,13);
+    val vmap = Map(1 -> "Tommy", 2 -> "Marian", 3 -> "Jayden");
+
+    println(ulst.map(x => x * 2));
+
+    println(ulst.map(x => x / 0.02));
+
+    println(ulst.map(x => "hi" + x));
+
+    println(ulst.map(x => "hi" * x));
+
+    println(vmap.map(x => "hi" + x));
+
+    println(vmap.mapValues(x => "hi " + x));
+
+    println(List(List(1,2,3), List(3,4,5)));
+
+    println(List(List(1,2,3), List(3,4,5)).flatten);
+
+    println(ulst.flatMap( x => List(x, x+1)));
+
+    //Predicate : returning a boolean value
+    println(ulst.filter(x => x%2!=0));
 
   }
 

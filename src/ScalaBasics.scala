@@ -33,6 +33,9 @@ object ScalaBasics{
 
     println(map.get(1).get)
 
+    //how to handle a not present key
+    println(map.get(5).getOrElse("No such key exist"))
+
 
   }
 

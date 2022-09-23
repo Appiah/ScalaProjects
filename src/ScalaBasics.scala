@@ -20,6 +20,20 @@ object ScalaBasics{
     println(1 -> "Tom" -> true);
     println(mytuple3._3._2);
 
+    val lst = List(1, 2, 3);
+    val map = Map(1 -> "Tom", 2 -> "Maggi", 3 -> "John");
+
+    println(lst.find(_ > 6));
+    println(lst.find(_ > 2));
+
+    println(map.get(1));
+
+    //And now how to extract the value
+    //use : .get
+
+    println(map.get(1).get)
+
+
   }
 
 }
